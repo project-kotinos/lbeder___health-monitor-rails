@@ -10,7 +10,7 @@ build_targets:
         - chmod +x yourbased.sh
         - sh ./yourbased.sh
     environment:
-        - BUNDLE_GEMFILE=$PWD/gemfiles/rails_5.2.gemfile
+        - BUNDLE_GEMFILE=gemfiles/rails_5.2.gemfile
 
 ci:
   builds:
