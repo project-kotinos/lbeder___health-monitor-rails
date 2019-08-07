@@ -3,16 +3,26 @@ dependencies:
     - ruby:2.5.3
 
 build_targets:
-  - name: default
+  - name: ruby.2.5.3.gemfile.5.1
     container: 
       image: yourbase/yb_ubuntu:16.04
     commands:
         - chmod +x yourbased.sh
         - sh ./yourbased.sh
     environment:
-        - BUNDLE_GEMFILE=gemfiles/rails_5.2.gemfile
+        - BUNDLE_GEMFILE=gemfiles/rails_5.1.gemfile
+  - name: ruby.2.5.3.gemfile.5.2
+    container: 
+      image: yourbase/yb_ubuntu:16.04
+    commands:
+        - chmod +x yourbased.sh
+        - sh ./yourbased.sh
+    environment:
+        - BUNDLE_GEMFILE=gemfiles/rails_5.2.gemfile 
 
 ci:
   builds:
-    - name: default
-      build_target: default
+    - name: ruby.2.5.3.gemfile.5.1
+      build_target: ruby.2.5.3.gemfile.5.1
+    - name: ruby.2.5.3.gemfile.5.2
+      build_target: ruby.2.5.3.gemfile.5.2
