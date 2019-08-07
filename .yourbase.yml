@@ -1,0 +1,18 @@
+dependencies:
+  build:
+    - ruby:2.5.3
+
+build_targets:
+  - name: default
+    container: 
+      image: yourbase/yb_ubuntu:16.04
+    commands:
+        - chmod +x yourbased.sh
+        - ./yourbased.sh
+    environment:
+        - BUNDLE_GEMFILE=$PWD/gemfiles/rails_5.2.gemfile
+
+ci:
+  builds:
+    - name: default
+      build_target: default
